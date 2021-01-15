@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import AppLayout from '../components/AppLayout';
 import Head from 'next/head';
 
