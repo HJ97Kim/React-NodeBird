@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useCallback } from 'react';
 import { Form, Input, Button } from 'antd';
 import Link from 'next/link';
