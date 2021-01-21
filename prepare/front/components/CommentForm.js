@@ -21,7 +21,7 @@ const CommentForm = ({ post }) => {
   );
 };
 
-CommentForm.propType = {
+CommentForm.propTypes = {
   post: PropTypes.object.isRequired,
 };
 

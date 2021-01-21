@@ -7,11 +7,11 @@ export const initialState = {
     },
     content: '첫 번째 게시글 #해시태그 #익스프레스',
     Images: [{
-      src: 'https://lh3.googleusercontent.com/proxy/AhQH42AfCPTMx7S2b9b20-PumK9lds4skEX46xdXPOy6ZkbPz3oSoXOhKJEu6nj1olH-DOC2uF4f0b8w401cQ0O0ie09a-Rnf-0XbN5oQOU8qNNBAQ',
+      src: 'https://lh3.googleusercontent.com/proxy/0j4sm2-q8RxyWOfAlOV7_6fnDuV30spB67hpnDljssDUIs594XCylBMpHfJtv7ZGO9P6c8_PBBd2UY59nOzcywPxytJwu-o4Il4qdPFx5a1fuPGGSQ',
     }, {
-      src: 'https://lh3.googleusercontent.com/proxy/AhQH42AfCPTMx7S2b9b20-PumK9lds4skEX46xdXPOy6ZkbPz3oSoXOhKJEu6nj1olH-DOC2uF4f0b8w401cQ0O0ie09a-Rnf-0XbN5oQOU8qNNBAQ',
+      src: 'https://lh3.googleusercontent.com/proxy/0j4sm2-q8RxyWOfAlOV7_6fnDuV30spB67hpnDljssDUIs594XCylBMpHfJtv7ZGO9P6c8_PBBd2UY59nOzcywPxytJwu-o4Il4qdPFx5a1fuPGGSQ',
     }, {
-      src: 'https://lh3.googleusercontent.com/proxy/AhQH42AfCPTMx7S2b9b20-PumK9lds4skEX46xdXPOy6ZkbPz3oSoXOhKJEu6nj1olH-DOC2uF4f0b8w401cQ0O0ie09a-Rnf-0XbN5oQOU8qNNBAQ',
+      src: 'https://lh3.googleusercontent.com/proxy/0j4sm2-q8RxyWOfAlOV7_6fnDuV30spB67hpnDljssDUIs594XCylBMpHfJtv7ZGO9P6c8_PBBd2UY59nOzcywPxytJwu-o4Il4qdPFx5a1fuPGGSQ',
     }],
     Comments: [{
       User: {
