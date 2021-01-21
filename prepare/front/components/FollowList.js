@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { List, Button, Card } from 'antd';
@@ -21,7 +22,7 @@ const FollowList = ({ header, data }) => {
         </List.Item>
       )}
     />
-  )
+  );
 };
 
 FollowList.propTypes = {

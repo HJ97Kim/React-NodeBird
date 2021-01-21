@@ -18,13 +18,13 @@ export const initialState = {
         nickname: 'maru',
       },
       content: '너무 귀여워요~',
-    }]
+    }],
   }],
   imagePaths: [],
   addPostLoading: false,
   addPostDone: false,
   addPostError: null,
-}
+};
 
 export const ADD_POST_REQUEST = 'ADD_POST_REQUEST';
 export const ADD_POST_SUCCESS = 'ADD_POST_SUCCESS';
@@ -63,7 +63,7 @@ const reducer = (state = initialState, action) => {
         addPostLoading: true,
         addPostDone: false,
         addPostError: null,
-      }
+      };
     case ADD_POST_SUCCESS:
       return {
         ...state,
@@ -76,14 +76,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         addPostLoading: false,
         addPostError: action.error,
-      }
+      };
     case ADD_COMMENT_REQUEST:
       return {
         ...state,
         addCommentLoading: true,
         addCommentDone: false,
         addCommentError: null,
-      }
+      };
     case ADD_COMMENT_SUCCESS:
       return {
         ...state,
@@ -95,10 +95,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         addCommentLoading: false,
         addCommentError: action.error,
-      }
+      };
     default:
       return state;
   }
-}
+};
 
 export default reducer;

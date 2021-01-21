@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -20,6 +21,6 @@ const NodeBird = ({ Component }) => {
 
 NodeBird.propTypes = {
   Component: PropTypes.elementType.isRequired,
-}
+};
 
 export default wrapper.withRedux(withReduxSaga(NodeBird));

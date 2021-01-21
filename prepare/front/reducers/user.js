@@ -11,7 +11,7 @@ export const initialState = {
   me: null,
   signUpData: {},
   loginData: {},
-}
+};
 
 export const LOG_IN_REQUEST = 'LOG_IN_REQUEST';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
@@ -43,18 +43,14 @@ const dummyUser = (data) => ({
 });
 
 // action creator
-export const loginRequestAction = (data) => {
-  return {
-    type: LOG_IN_REQUEST,
-    data,
-  }
-};
+export const loginRequestAction = (data) => ({
+  type: LOG_IN_REQUEST,
+  data,
+});
 
-export const logoutRequestAction = () => {
-  return {
-    type: LOG_OUT_REQUEST,
-  }
-};
+export const logoutRequestAction = () => ({
+  type: LOG_OUT_REQUEST,
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -120,6 +116,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;
