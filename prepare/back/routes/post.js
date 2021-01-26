@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { Post } = require('../models');
+const { Post, Image, Comment, User } = require('../models');
 const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
@@ -31,6 +31,16 @@ router.post('/:postId/comment', isLoggedIn, async (req, res, next) => { // POST 
       PostId: req.params.postId,
       UserId: req.user.id,
     });
+    const fullPost = await Post.findOne({
+      where: { id: post.id },
+      include: [{
+        model: Image,
+      }, {
+        model: Comment,
+      }, {
+        model: User,
+      }]
+    })
     res.status(201).json(comment);
   } catch (error) {
     console.error(error);
