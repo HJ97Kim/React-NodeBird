@@ -15,12 +15,35 @@ try {
   fs.mkdirSync('uploads');
 }
 
-router.post('/', isLoggedIn, async (req, res, next) => { // POST /post
+const upload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, 'uploads');
+    },
+    filename(req, file, done) { // 김형진.png
+      const ext = path.extname(file.originalname); // 확장자 추출(.png)
+      const basename = path.basename(file.originalname, ext); // 김형진
+      done(null, basename + '_' + new Date().getTime() + ext); // 김형진12987012.png
+    },
+  }),
+  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
+});
+
+router.post('/', isLoggedIn, upload.none(), async (req, res, next) => { // POST /post
   try {
     const post = await Post.create({
       content: req.body.content,
       UserId: req.user.id,
     });
+    if (req.body.image) {
+      if (Array.isArray(req.body.image)) { // 이미지를 여러 개 올리면 image: [김형진.png, 김마루.png]
+        const images = await Promise.all(req.body.image.map((image) => Image.create({ src: image })));
+        await post.addImages(images);
+      } else { // 이미지를 하나만 올리면 image: 김형진.png
+        const image = await Image.create({ src: req.body.image });
+        await post.addImages(image);
+      }
+    }
     const fullPost = await Post.findOne({
       where: { id: post.id },
       include: [{
@@ -47,19 +70,6 @@ router.post('/', isLoggedIn, async (req, res, next) => { // POST /post
   }
 });
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination(req, file, done) {
-      done(null, 'uploads');
-    },
-    filename(req, file, done) { // 김형진.png
-      const ext = path.extname(file.originalname); // 확장자 추출(.png)
-      const basename = path.basename(file.originalname, ext); // 김형진
-      done(null, basename + new Date().getTime() + ext); // 김형진12987012.png
-    },
-  }),
-  limits: { fileSize: 20 * 1024 * 1024 }, // 20MB
-});
 router.post('/images', isLoggedIn, upload.array('image'), (req, res, next) => { // POST /post/images
   console.log(req.files);
   res.json(req.files.map((v) => v.filename));
