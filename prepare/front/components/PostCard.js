@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Popover, Avatar, List, Comment } from 'antd';
 import { RetweetOutlined, HeartOutlined, MessageOutlined, EllipsisOutlined, HeartTwoTone } from '@ant-design/icons';
@@ -129,8 +129,6 @@ const PostCard = ({ post }) => {
           />
         </div>
       )}
-      {/* <CommentForm />
-      <Comments /> */}
     </div>
   );
 };
