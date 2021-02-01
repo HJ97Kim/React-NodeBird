@@ -1419,8 +1419,7 @@ module.exports = require("next-redux-wrapper");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return REMOVE_POST_OF_ME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "K", function() { return loginRequestAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "L", function() { return logoutRequestAction; });
-/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("T5ka");
-/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_produce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ionj");
 
 const initialState = {
   loadMyInfoLoading: false,
@@ -1514,7 +1513,7 @@ const logoutRequestAction = () => ({
   type: LOG_OUT_REQUEST
 });
 
-const reducer = (state = initialState, action) => immer__WEBPACK_IMPORTED_MODULE_0___default()(state, draft => {
+const reducer = (state = initialState, action) => Object(_util_produce__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(state, draft => {
   switch (action.type) {
     case REMOVE_FOLLOWER_REQUEST:
       draft.removeFollowerLoading = true;
@@ -3477,6 +3476,20 @@ function parseRelativeUrl(url, base) {
 
 /***/ }),
 
+/***/ "ionj":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("T5ka");
+/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["a"] = ((...args) => {
+  Object(immer__WEBPACK_IMPORTED_MODULE_0__["enableES5"])();
+  return immer__WEBPACK_IMPORTED_MODULE_0___default()(...args);
+});
+
+/***/ }),
+
 /***/ "kduo":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4222,8 +4235,7 @@ module.exports = require("@ant-design/icons");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return REMOVE_IMAGE; });
 /* unused harmony export addPost */
 /* unused harmony export addComment */
-/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("T5ka");
-/* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(immer__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_produce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ionj");
 
 const initialState = {
   mainPosts: [],
@@ -4301,7 +4313,7 @@ const addComment = data => ({
   data
 }); // 이전 상태를 액션을 통해 다음 상태로 만들어내는 함수 reducer (불변성은 지키면서)
 
-const reducer = (state = initialState, action) => immer__WEBPACK_IMPORTED_MODULE_0___default()(state, draft => {
+const reducer = (state = initialState, action) => Object(_util_produce__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(state, draft => {
   switch (action.type) {
     case RETWEET_REQUEST:
       draft.retweetLoading = true;
