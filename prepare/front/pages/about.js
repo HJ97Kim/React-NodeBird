@@ -14,7 +14,7 @@ const Profile = () => {
   return (
     <AppLayout>
       <Head>
-        <title>HyungJin | NodeBird</title>
+        <title>ZeroCho | NodeBird</title>
       </Head>
       {userInfo
         ? (
