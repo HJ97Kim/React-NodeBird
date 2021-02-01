@@ -1,5 +1,5 @@
 uploads/
 .env
-react-nodebird.pem
+react-nodebird-aws.pem
 node-modules
 .next
